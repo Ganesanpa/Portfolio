@@ -1,4 +1,4 @@
-// components/BlogSection.tsx
+
 import { blogPosts } from "@/data/blogData";
 import BlogCard from "./BlogCard";
 import Carousel from "./Carousel";

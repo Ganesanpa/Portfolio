@@ -1,6 +1,5 @@
 "use client";
 import Navbar from '@/components/NavBar'
-import ThemeToggle from '../components/ThemeToggle'
 import {projects} from '@/data/projects'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -11,11 +10,7 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import ScrollAnimation from '@/components/ScrollAnimation'
-import SectionWrapper from "@/components/SectionWrapper";
-import CardGrid from "@/components/CardGrid";
 import CertificationsPage from './certifications/page'
-import { blogPosts } from "@/data/blogData";
-import BlogCard from "@/components/BlogCard";
 import BlogSection from "@/components/BlogSection";
 export default function Home() {
   return (
@@ -48,7 +43,6 @@ export default function Home() {
       <h2 className="text-3xl font-bold text-center mb-6">Latest Blogs</h2>
 <BlogSection />
     </section>
-
 </ScrollAnimation>         
    <ScrollAnimation>
          <CertificationsPage/>

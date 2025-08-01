@@ -1,4 +1,4 @@
-// components/ProjectDetail.tsx
+
 
 import Image from "next/image";
 import { Project } from "@/types";
@@ -14,7 +14,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
     <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
     <p className="text-lg text-muted-foreground mb-4">{project.description}</p>
     
-    {/* Add Tech Stack if available */}
+ 
     <div className="mb-4">
       <h2 className="text-xl font-semibold">Tech Stack</h2>
       <ul className="list-disc list-inside">

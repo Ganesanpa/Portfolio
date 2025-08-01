@@ -1,4 +1,4 @@
-// types/index.ts
+
 
 export type Project = {
   id: string;

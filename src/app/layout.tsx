@@ -10,7 +10,6 @@ export const metadata = {
   title: 'Ganesan | Portfolio',
   description: 'My portfolio website',
 }
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
