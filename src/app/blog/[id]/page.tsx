@@ -1,12 +1,12 @@
+// src/app/blog/[id]/page.tsx
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
-import type { Metadata } from "next";
 
-export type PageProps = {
+interface BlogPageProps {
   params: { id: string };
-};
+}
 
-export default function BlogPage({ params }: PageProps) {
+export default function BlogPage({ params }: BlogPageProps) {
   const post = blogPosts.find((p) => p.id === params.id);
 
   if (!post) return notFound();
@@ -20,4 +20,11 @@ export default function BlogPage({ params }: PageProps) {
       </article>
     </div>
   );
+}
+
+// ✅ Add this function to statically generate paths
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    id: post.id,
+  }));
 }
