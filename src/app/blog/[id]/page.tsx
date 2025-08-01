@@ -1,15 +1,21 @@
+
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
+import { type Metadata } from "next";
 
-interface BlogPageProps {
-  params: { id: string };
+interface Props {
+  params: {
+    id: string;
+  };
 }
 
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({ id: post.id }));
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = blogPosts.find((p) => p.id === params.id);
+  if (!post) return {};
+  return { title: post.title };
 }
 
-export default function BlogPage({ params }: BlogPageProps) {
+export default function BlogPage({ params }: Props) {
   const post = blogPosts.find((p) => p.id === params.id);
 
   if (!post) return notFound();
