@@ -1,14 +1,12 @@
-// app/blog/[id]/page.tsx
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
+import type { Metadata } from "next";
 
-interface BlogPageProps {
-  params: {
-    id: string;
-  };
-}
+export type PageProps = {
+  params: { id: string };
+};
 
-export default function BlogPage({ params }: BlogPageProps) {
+export default function BlogPage({ params }: PageProps) {
   const post = blogPosts.find((p) => p.id === params.id);
 
   if (!post) return notFound();
