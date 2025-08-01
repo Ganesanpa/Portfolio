@@ -1,9 +1,12 @@
-// src/app/blog/[id]/page.tsx
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
 interface BlogPageProps {
   params: { id: string };
+}
+
+export function generateStaticParams() {
+  return blogPosts.map((post) => ({ id: post.id }));
 }
 
 export default function BlogPage({ params }: BlogPageProps) {
@@ -20,11 +23,4 @@ export default function BlogPage({ params }: BlogPageProps) {
       </article>
     </div>
   );
-}
-
-// ✅ Add this function to statically generate paths
-export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    id: post.id,
-  }));
 }
