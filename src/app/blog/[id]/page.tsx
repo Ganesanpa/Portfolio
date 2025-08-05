@@ -1,14 +1,25 @@
+// app/blog/[id]/page.tsx
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
+import { Metadata } from "next";
 
-// Correct way to define params type in App Router
-type BlogPageProps = {
+type Props = {
   params: {
     id: string;
   };
 };
 
-export default function BlogPage({ params }: BlogPageProps) {
+
+export function generateMetadata({ params }: Props): Metadata {
+  const post = blogPosts.find((p) => p.id === params.id);
+  if (!post) return { title: "Post not found" };
+  return {
+    title: post.title,
+    description: post.summary,
+  };
+}
+
+export default function BlogPage({ params }: Props) {
   const post = blogPosts.find((p) => p.id === params.id);
 
   if (!post) return notFound();
