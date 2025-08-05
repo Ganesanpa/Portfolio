@@ -1,21 +1,14 @@
-
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
-import { type Metadata } from "next";
 
-interface Props {
+// Correct way to define params type in App Router
+type BlogPageProps = {
   params: {
     id: string;
   };
-}
+};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.id === params.id);
-  if (!post) return {};
-  return { title: post.title };
-}
-
-export default function BlogPage({ params }: Props) {
+export default function BlogPage({ params }: BlogPageProps) {
   const post = blogPosts.find((p) => p.id === params.id);
 
   if (!post) return notFound();
