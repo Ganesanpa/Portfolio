@@ -1,36 +1,39 @@
-// app/blog/[id]/page.tsx
+// remove your old type Props
+
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
-import { Metadata } from "next";
 
-type Props = {
+// Correct Props type for App Router
+interface BlogPageProps {
   params: {
     id: string;
   };
-};
+}
 
-
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata(
+  { params }: BlogPageProps
+): Promise<Metadata> {
   const post = blogPosts.find((p) => p.id === params.id);
   if (!post) return { title: "Post not found" };
+
   return {
     title: post.title,
     description: post.summary,
   };
 }
 
-export default function BlogPage({ params }: Props) {
+export default function BlogPage({ params }: BlogPageProps) {
   const post = blogPosts.find((p) => p.id === params.id);
 
-  if (!post) return notFound();
+  if (!post) {
+    notFound();
+  }
 
   return (
-    <div className="max-w-3xl mx-auto py-16 px-4">
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <p className="text-muted-foreground mb-6">{post.summary}</p>
-      <article className="prose prose-lg dark:prose-invert">
-        <p>{post.content}</p>
-      </article>
-    </div>
+    <main className="p-6">
+      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+      <p className="text-muted-foreground">{post.summary}</p>
+    </main>
   );
 }

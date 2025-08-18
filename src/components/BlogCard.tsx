@@ -1,11 +1,9 @@
 import Link from "next/link";
-
 interface BlogCardProps {
   id: string;
   title: string;
   summary: string;
 }
-
 export default function BlogCard({ id, title, summary }: BlogCardProps) {
   return (
     <div className="border rounded-2xl p-4 shadow-md hover:shadow-xl transition">
