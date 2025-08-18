@@ -1,25 +1,9 @@
-// remove your old type Props
-
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
-// Correct Props type for App Router
 interface BlogPageProps {
   params: {
     id: string;
-  };
-}
-
-export async function generateMetadata(
-  { params }: BlogPageProps
-): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.id === params.id);
-  if (!post) return { title: "Post not found" };
-
-  return {
-    title: post.title,
-    description: post.summary,
   };
 }
 
@@ -31,9 +15,17 @@ export default function BlogPage({ params }: BlogPageProps) {
   }
 
   return (
-    <main className="p-6">
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p className="text-muted-foreground">{post.summary}</p>
-    </main>
+    <div className="max-w-3xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-4">{post?.title}</h1>
+      <p className="text-gray-600 mb-6">{post?.summary}</p>
+      <div className="text-lg leading-relaxed">{post?.content}</div>
+    </div>
   );
+}
+
+// ✅ Important for static site generation (fixes the build error)
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    id: post.id,
+  }));
 }
