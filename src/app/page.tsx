@@ -2,7 +2,7 @@
 import Navbar from '@/components/NavBar'
 import {projects} from '@/data/projects'
 
-import Link from 'ink'
+import Link from 'next/link';
 import Image from 'next/image'
 import About from '@/components/About'
 import ProjectCard from "@/components/ProjectCard";
