@@ -5,8 +5,8 @@ export const projects = [
     description: "A personal portfolio site built using Next.js and Tailwind CSS.",
     image: "/images/portfolio.jpg",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/Zed-B2-Developer-Intern/9034_TASK_2.git",
-    live: "https://your-portfolio.vercel.app",
+    github: "https://github.com/Ganesanpa/Portfolio",
+    live: "https://portfolio-eight-wheat-28.vercel.app/",
   },
   {
     id: "2",
@@ -14,7 +14,7 @@ export const projects = [
     description: "A simple e-commerce frontend with cart, filtering, and checkout.",
     image: "/images/e-comerce.jpg",
     tech: ["Next.js", "Tailwind CSS", "Zustand", "Ant Design"],
-    github: "https://github.com/Zed-B2-Developer-Intern/9034_Task1.git",
+    github: "https://github.com/Ganesanpa/E-commerce-website",
     live: "https://ecommerce.vercel.app",
   },
   {
@@ -23,7 +23,7 @@ export const projects = [
     description: "JavaFX-based car rental management system with MySQL integration and role-based access.",
     image: "/images/car.jpg",
     tech: ["Java", "JavaFX", "MySQL"],
-    github: "https://github.com/yourname/car-rental-system",
+    github: "https://github.com/Ganesanpa/Car-Rental-System",
   },
   {
     id: "4",
@@ -31,7 +31,7 @@ export const projects = [
     description: "A Java-based ATM simulation application implementing object-oriented design patterns.",
     image: "/images/atm-system.jpg",
     tech: ["Java", "OOP", "Design Patterns"],
-    github: "https://github.com/yourname/atm-system",
+    github: "https://github.com/Ganesanpa/ATM-System",
   },
   {
     id: "5",
@@ -55,6 +55,6 @@ export const projects = [
     description: "An eco-friendly route planner web app using OpenRouteService and Folium with emission calculation.",
     image: "/images/green-way.jpg",
     tech: ["Python", "Flask", "OpenRouteService", "Folium"],
-    github: "https://github.com/yourname/green-way-navigator",
+    github: "hhttps://github.com/Ganesanpa/Green-Way-Navigator",
   }
 ];

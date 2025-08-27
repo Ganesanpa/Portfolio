@@ -12,16 +12,16 @@ const Footer = () => {
         </p>
 
         <div className="flex justify-center gap-4 mt-4 text-xl text-gray-600 dark:text-gray-300">
-          <Link href="https://github.com/yourusername" target="_blank">
+          <Link href="https://github.com/Ganesanpa" target="_blank">
             <FaGithub />
           </Link>
-          <Link href="https://linkedin.com/in/yourusername" target="_blank">
+          <Link href="https://www.linkedin.com/in/ganesan-p-a96614298/" target="_blank">
             <FaLinkedin />
           </Link>
-          <Link href="https://linkedin.com/in/yourusername" target="_blank">
+          <Link href="https://www.instagram.com/joyboy_.73/" target="_blank">
             <FaInstagram />
           </Link>
-          <Link href="https://linkedin.com/in/yourusername" target="_blank">
+          <Link href="https://www.facebook.com/profile.php?id=100058630485265" target="_blank">
             <FaFacebook />
           </Link>
           <a href="#" aria-label="Back to top">
