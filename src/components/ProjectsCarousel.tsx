@@ -1,6 +1,6 @@
 "use client";
 import Slider from "react-slick";
-import ProjectCard from "./Projects";
+import ProjectCard from "@/components/ProjectCard";
 import { Project } from "@/types";
 
 export default function ProjectsCarousel({ projects }: { projects: Project[] }) {

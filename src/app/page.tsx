@@ -1,10 +1,11 @@
 "use client";
 import Navbar from '@/components/NavBar'
 import {projects} from '@/data/projects'
-import Link from 'next/link'
+
+import Link from 'ink'
 import Image from 'next/image'
 import About from '@/components/About'
-import Projects from '@/components/Projects'
+import ProjectCard from "@/components/ProjectCard";
 import Skills from "@/components/Skills"
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -12,6 +13,7 @@ import Hero from '@/components/Hero'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import CertificationsPage from './certifications/page'
 import BlogSection from "@/components/BlogSection";
+import Projects from "@/components/Projects";
 export default function Home() {
   return (
     <>
@@ -24,16 +26,17 @@ export default function Home() {
              <About/>
       </ScrollAnimation>
         <ScrollAnimation>        
-             <div className="max-w-5xl mx-auto px-4 py-12">
+             <section id="projects" className="max-w-5xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-8">My Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <Link key={project.id} href={`/projects/${project.id}`}>
-            <Projects project={project} />
-          </Link>
-        ))}
-      </div>
-    </div>
+  {projects.map((project) => (
+    <ProjectCard key={project.id} project={project} />
+  ))}
+</div>
+
+    </section>
+
+     
        </ScrollAnimation>      
       <ScrollAnimation>
             <Skills />
